@@ -2,26 +2,26 @@ import { useState } from 'react';
 import { Button, Form, FormInput, FormLabel } from './ContactForm.styled';
 
 const ContactForm = ({ onSubmit }) => {
-  const [name, setname] = useState('');
-  const [number, setnumber] = useState('');
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
 
     onSubmit({ name, number });
 
-    setname('');
-    setnumber('');
+    setName('');
+    setNumber('');
   };
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'name':
-        setname(value);
+        setName(value);
         break;
 
       case 'number':
-        setnumber(value);
+        setNumber(value);
         break;
 
       default:

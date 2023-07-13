@@ -13,7 +13,7 @@ const App = () => {
   const [contacts, setcontacts] = useState(
     JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_KEY)) ?? []
   );
-  const [filter, setfilter] = useState('');
+  const [filter, setFilter] = useState('');
 
   // useEffect(() => {
   //   const savedContactList = window.localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -25,7 +25,7 @@ const App = () => {
     window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
 
-  const filterContacts = ({ target: { value } }) => setfilter(value);
+  const filterContacts = ({ target: { value } }) => setFilter(value);
   const createContact = data => {
     const newContact = { id: nanoid(), ...data };
     const newContactName = newContact.name.toLowerCase();
